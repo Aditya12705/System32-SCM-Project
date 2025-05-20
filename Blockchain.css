@@ -109,11 +109,18 @@ nav {
 .nav-cta {
     background: #2563eb;
     border-radius: 6px;
+    box-shadow: 0 0 0 0 #2563eb55;
+    animation: navCtaGlow 2.5s infinite alternate;
 }
 
 .nav-cta:hover {
     background: #1e40af;
     color: white !important;
+}
+
+@keyframes navCtaGlow {
+    0% { box-shadow: 0 0 0 0 #2563eb33; }
+    100% { box-shadow: 0 0 16px 4px #2563eb66; }
 }
 
 .header-content {
@@ -145,6 +152,16 @@ nav {
     background: rgba(37, 99, 235, 0.1);
     border-radius: 8px;
     border: 1px solid rgba(96, 165, 250, 0.2);
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeInUp 1.2s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 .prerequisites {
@@ -309,6 +326,7 @@ nav {
 
 .testimonial-card:hover {
     box-shadow: 0 0 32px 0 #60a5fa55;
+    transform: scale(1.03);
 }
 
 .testimonial-author {
@@ -612,11 +630,18 @@ footer p {
     font-size: 0.9rem;
     font-weight: bold;
     animation: floatBadge 2.5s infinite alternate;
+    box-shadow: 0 0 8px 2px #2563eb44;
 }
 
 @keyframes floatBadge {
-    0% { transform: translateY(0);}
-    100% { transform: translateY(-6px);}
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-6px); }
+}
+
+.event-image {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(37,99,235,0.09);
 }
 
 @keyframes cyberHeader {
