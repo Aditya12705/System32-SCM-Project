@@ -20,7 +20,9 @@ body {
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #23272f, #181f2a 80%);
+    background: linear-gradient(120deg, #23272f 0%, #2563eb 100%);
+    background-size: 200% 200%;
+    animation: cyberHeader 8s ease-in-out infinite alternate;
     color: #e5e7eb;
     text-align: center;
     padding: 40px 0;
@@ -156,7 +158,13 @@ nav {
     background: rgba(24, 31, 42, 0.5);
     border-radius: 12px;
     padding: 1.5rem;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1.5px solid #2563eb;
+    box-shadow: 0 0 16px 0 rgba(37,99,235,0.10);
+    transition: box-shadow 0.3s;
+}
+
+.prerequisites-card:hover {
+    box-shadow: 0 0 32px 0 #60a5fa55;
 }
 
 .prerequisites-card h3 {
@@ -194,7 +202,13 @@ nav {
     background: rgba(24, 31, 42, 0.5);
     border-radius: 12px;
     padding: 1.5rem;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1.5px solid #2563eb;
+    box-shadow: 0 0 16px 0 rgba(37,99,235,0.10);
+    transition: box-shadow 0.3s;
+}
+
+.meta-card:hover {
+    box-shadow: 0 0 32px 0 #60a5fa55;
 }
 
 .meta-card h3 {
@@ -262,6 +276,12 @@ nav {
     font-weight: bold;
     color: #60a5fa;
     margin-bottom: 0.5rem;
+    animation: pulseStat 2.5s infinite alternate;
+}
+
+@keyframes pulseStat {
+    0% { color: #60a5fa; text-shadow: 0 0 0 #60a5fa; }
+    100% { color: #34d399; text-shadow: 0 0 12px #34d39988; }
 }
 
 .stat-label {
@@ -280,7 +300,13 @@ nav {
     background: rgba(24, 31, 42, 0.5);
     padding: 2rem;
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1.5px solid #2563eb;
+    box-shadow: 0 0 16px 0 rgba(37,99,235,0.10);
+    transition: box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 0 32px 0 #60a5fa55;
 }
 
 .testimonial-author {
@@ -305,6 +331,16 @@ nav {
     padding: 30px;
     margin-bottom: 24px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInSection 1.2s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+@keyframes fadeInSection {
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 .section h2, .section h3 {
@@ -312,6 +348,16 @@ nav {
     margin-bottom: 18px;
     border-bottom: 1px solid #23272f;
     padding-bottom: 6px;
+}
+
+.section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #60a5fa, #34d399);
 }
 
 .section ul, .section li {
@@ -347,6 +393,13 @@ nav {
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+    box-shadow: 0 0 0 0 #2563eb55;
+    animation: btnGlow 2.2s infinite alternate;
+}
+
+@keyframes btnGlow {
+    0% { box-shadow: 0 0 0 0 #2563eb33; }
+    100% { box-shadow: 0 0 16px 4px #2563eb66; }
 }
 
 .btn:hover {
@@ -355,7 +408,7 @@ nav {
 }
 
 .speaker img {
-    border-radius: 50%;
+    border-radius: 8px;
     object-fit: cover;
     background: #222;
     border: 2px solid #23272f;
@@ -500,6 +553,13 @@ footer p {
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: #e5e7eb;
+    border: 1.5px solid #2563eb;
+    box-shadow: 0 0 16px 0 rgba(37,99,235,0.10);
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 0 32px 0 #60a5fa55;
 }
 
 .badge {
@@ -510,5 +570,16 @@ footer p {
     border-radius: 12px;
     font-size: 0.9rem;
     font-weight: bold;
+    animation: floatBadge 2.5s infinite alternate;
+}
+
+@keyframes floatBadge {
+    0% { transform: translateY(0);}
+    100% { transform: translateY(-6px);}
+}
+
+@keyframes cyberHeader {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
